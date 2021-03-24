@@ -1,36 +1,36 @@
-let People = require('./peopleModel')
+let Artist = require('./peopleModel')
 require("../connection")
 
 let controller = {
   create(request, response){
-    let people = request.body
-    People
-      .create(people)
-      .then(people=> response.json(people))
+    let artist = request.body
+    Artist
+      .create(artist)
+      .then(artist=> response.json(artist))
   },
   readById(request, response){
     let id = request.params.id
-    People
+    Artist
       .findById(id)
-      .then(peoples=> response.json(peoples))
+      .then(artists=> response.json(artists))
   },
   readAll(request, response){
-    People
+    Artist
       .find({})
-      .then(peoples=> response.json(peoples))
+      .then(artists=> response.json(artists))
       .then(data=>console.log(data))
   },
   update(request, response) {
-    let people = request.body
+    let artist = request.body
     let id = request.params.id
-    People
-      .findByIdAndUpdate(id, people, {new: true})
-      .then(people=> response.json(people))
+    Artist
+      .findByIdAndUpdate(id, artist, {new: true})
+      .then(artist=> response.json(artist))
 
   },
   destroy(request, response){
     let id = request.params.id
-    People
+    Artist
       .findByIdAndDelete(id)
       .then(()=> response.json({ok: true}))
   }
