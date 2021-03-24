@@ -1,5 +1,4 @@
 let Song = require('./model')
-require("../connection")
 
 let controller = {
   create(request, response){

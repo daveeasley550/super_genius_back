@@ -1,10 +1,10 @@
-require("./database.js")
+require("./database")
 let fetch = require("node-fetch")
 let mongoose =require("mongoose")
 let artistModel = require("./artists/model")
 let songModel =require("./songs/model")
-let artistData = require("./artistAPIData.json")
-let songData = require("./songAPIData.json")
+let artist = require("./artists/artistAPIData.json")
+let songData = require("./songs/songAPIData.json")
 let fs = require("fs").promises
 
 let artistURL = "http://ws.audioscrobbler.com/2.0/?method=chart.gettopartists&api_key=864ffe55118cd2944b873cafe1db1c40&format=json"
@@ -18,7 +18,6 @@ fetch(artistURL)
             .then(
                 artistModel.create(artistData).then(data=> {
                     console.log(data.length)
-                    mongoose.disconnect()
                 })
             )
     })
@@ -37,4 +36,3 @@ fetch(trackURL)
                 })
             )
     })
-

@@ -1,5 +1,4 @@
 let Artist = require('./model')
-require("../connection")
 
 let controller = {
   create(request, response){
