@@ -1,26 +1,19 @@
-// let peopleJson = require('./people.json')
-// let peopleModel = require('./goodies/peopleModel')
-// let mongoose=require("mongoose")
-// require("./connection")
+// require("./database");
+// let mongoose = require("mongoose");
+// let artistModel = require('./artists/model');
+// let songModel = require('./songs/model');
+// let artistData = require("./data/artistAPIData.json");
+// let songData = require("./data/songAPIData.json");
 
-// peopleModel
-//   .deleteMany({})//clears all before making multiple
-//   // console.log(peopleJson[0].result.properties)
-//   .then(()=> peopleModel.create(peopleJson))
-//   .then(mongoose.disconnect)
-//   .then(()=> console.log("Done!"))
+// artistModel.deleteMany({}).then(
+//   artistModel.create(artistData).then((artists) => {
+//     console.log(artists.length, "Artist JSON created!");
+//   })
+// );
 
-
-
-
-
-require("./database");
-let mongoose = require("mongoose");
-let peopleModel = require('./goodies/peopleModel');
-let websiteData = require("./people.json");
-peopleModel.deleteMany({}).then(
-  peopleModel.create(websiteData).then((peopleJson) => {
-    console.log(peopleJson.length, "website starwars created");
-    mongoose.disconnect();
-  })
-);
+// songModel.deleteMany({}).then(
+//   songModel.create(songData).then((songs) => {
+//     console.log(songs.length, "Song JSON created!");
+//     mongoose.disconnect();
+//   })
+// );

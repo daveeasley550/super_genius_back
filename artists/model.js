@@ -1,7 +1,9 @@
 let mongoose = require("mongoose");
-const Schema = mongoose.Schema;
 
-const artistSchema = new Schema({
+let artistSchema = new mongoose.Schema({
   name: String,
 });
-module.exports = mongoose.model("Artist", artistSchema);
+
+let Artist = mongoose.model("Artist", artistSchema);
+
+module.exports = Artist
