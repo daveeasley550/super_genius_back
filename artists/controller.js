@@ -1,4 +1,4 @@
-let Artist = require('./peopleModel')
+let Artist = require('./model')
 require("../connection")
 
 let controller = {

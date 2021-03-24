@@ -1,36 +1,36 @@
-let People = require('./peopleModel')
+let Song = require('./model')
 require("../connection")
 
 let controller = {
   create(request, response){
-    let people = request.body
-    People
-      .create(people)
-      .then(people=> response.json(people))
+    let song = request.body
+   Song
+      .create(song)
+      .then(song=> response.json(song))
   },
   readById(request, response){
     let id = request.params.id
-    People
+    Song
       .findById(id)
-      .then(peoples=> response.json(peoples))
+      .then(songs=> response.json(songs))
   },
   readAll(request, response){
-    People
+    Song
       .find({})
-      .then(peoples=> response.json(peoples))
+      .then(songs=> response.json(songs))
       .then(data=>console.log(data))
   },
   update(request, response) {
-    let people = request.body
+    let song = request.body
     let id = request.params.id
-    People
-      .findByIdAndUpdate(id, people, {new: true})
-      .then(people=> response.json(people))
+    Song
+      .findByIdAndUpdate(id, song, {new: true})
+      .then(song=> response.json(song))
 
   },
   destroy(request, response){
     let id = request.params.id
-    People
+    Song
       .findByIdAndDelete(id)
       .then(()=> response.json({ok: true}))
   }
