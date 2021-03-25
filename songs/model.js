@@ -4,7 +4,10 @@ let songSchema = new mongoose.Schema({
   tracks: {
     track: [{
       name: String,
-      playcount:Number
+      playcount:Number,
+      artist: {
+        name: String,
+      }
     }]
   }
 });
