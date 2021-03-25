@@ -11,7 +11,7 @@ let artistURL = "http://ws.audioscrobbler.com/2.0/?method=chart.gettopartists&ap
 let trackURL = "http://ws.audioscrobbler.com/2.0/?method=chart.gettoptracks&api_key=864ffe55118cd2944b873cafe1db1c40&format=json"
 fetch(artistURL)
     .then(res => res.json())
-    .then(data => fs.writeFile("./artists/artistAPIData.json", JSON.stringify(data)))
+    .then(data => fs.writeFile("./artists/artistAPIData.json", JSON.stringify(data.artists.artist)))
     .then(()=>{
         artistModel
             .deleteMany({})
@@ -25,7 +25,7 @@ fetch(artistURL)
 
 fetch(trackURL)
     .then(res => res.json())
-    .then(data => fs.writeFile("./songs/songAPIData.json", JSON.stringify(data)))
+    .then(data => fs.writeFile("./songs/songAPIData.json", JSON.stringify(data.tracks.track)))
     .then(()=>{
         songModel
             .deleteMany({})
