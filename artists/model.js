@@ -2,7 +2,11 @@ let mongoose = require("mongoose");
 
 let artistSchema = new mongoose.Schema({
   artists: {
-    artist: [{}]
+    artist: [{
+      name: String,
+      playcount: String,
+      url: String
+    }]
   }
   
 });
