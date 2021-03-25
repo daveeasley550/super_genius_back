@@ -1,4 +1,2 @@
-// require('./database')
-// require('./server')
-
-console.log("hello world")
+require('./database')
+require('./server')
