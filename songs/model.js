@@ -1,7 +1,12 @@
 let mongoose = require("mongoose");
 
 let songSchema = new mongoose.Schema({
-  name: String,
+  tracks: {
+    track: [{
+      name: String,
+      playcount:Number
+    }]
+  }
 });
 
 let Song = mongoose.model("Song", songSchema);

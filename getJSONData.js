@@ -31,7 +31,7 @@ fetch(trackURL)
             .deleteMany({})
             .then(
                 songModel.create(songData).then(data=> {
-                    console.log(data.length)
+                    console.log(data)
                     mongoose.disconnect()
                 })
             )
