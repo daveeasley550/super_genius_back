@@ -1,6 +1,7 @@
 const { Body } = require("node-fetch");
 require("../app")
 let Request = require("request");
+const fetch = require("node-fetch")
 
 describe("Server", ()=>{
     let server;
@@ -26,21 +27,33 @@ describe("Server", ()=>{
             expect(data.body).toBe("Dave and malcolm rule")
         });
     });
-    // describe("Get /test", ()=>{
-    //     let data = {};
-    //     beforeAll((done)=>{
-    //       Request.get("http://localhost:8000/test", (error, response, body)=>{
-    //         data.status = response.statusCode;
-    //         data.body =JSON.parse(body);
-    //         console.log("!!!")
-    //         done();
-    //       });  
-    //     });
-    //     it("Status 200", ()=>{
-    //         expect(data.status).toBe(500);
-    //     });
-    //     it("Body", ()=>{
-    //         expect(data.body).toBe("this is an error response")
-    //     });
-    // });
-});
+    describe("create a song", ()=>{
+        beforeAll((done)=>{
+            const newSong= {
+                name: "LOCAL TEST",
+            }
+            const requestOptions={
+                method: "POST",
+                mode: 'cors',
+                 headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(newSong)
+            }
+            fetch("https://super-genius-back.herokuapp.com/songs", requestOptions)
+            done();
+   
+  })
+          });  
+        });
+        it("LOCAL TEST", ()=>{
+            fetch("https://super-genius-back.herokuapp.com/songs")
+            .then(resp=>resp.json())
+            .then(returnedSong=>{
+            console.log(returnedSong)
+            expect(returnedSong.pop()).toBe(newSong);
+        });
+    });
+               
+   
+   
