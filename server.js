@@ -6,4 +6,7 @@ let server = app.listen(app.get("port"))
 server.on('listening', ()=> console.log("Server is listening"))
 server.on('error', error=> console.error("Server is struggling", error))
 
+
+
+
 module.exports = server
