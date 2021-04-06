@@ -73,9 +73,9 @@
 ## POST
 ### This will allow you to create a new artist.
 
-#### Template: `$ http POST https://super-genius-back.herokuapp.com/artist/<artist name> name="<name>" playcount="<number string>" url="<url>"`
+#### Template: `$ http POST https://super-genius-back.herokuapp.com/artist/ name="<name>" playcount="<number string>" url="<url>"`
 
-#### Example: `$ http POST https://super-genius-back.herokuapp.com/artist/Artists Name name="Artists Name" playcount="1051120140" url="https://lorum.com"`
+#### Example: `$ http POST https://super-genius-back.herokuapp.com/artist/ name="Artists Name" playcount="1051120140" url="https://lorum.com"`
 
 ##### Expected result: 
 ```
@@ -89,9 +89,9 @@ Artist
 
 ### This will allow you to create a new song.
 
-#### Template: `$ http POST https://super-genius-back.herokuapp.com/songs/<song name> name="<name>" playcount="<number string>" artist={name="<artist name>"}`
+#### Template: `$ http POST https://super-genius-back.herokuapp.com/songs/ name="<name>" playcount="<number string>" artist={name="<artist name>"}`
 
-#### Example: `$ http POST https://super-genius-back.herokuapp.com/songs/Song name="Song" playcount="1051120140" artist={name="Artist"}`
+#### Example: `$ http POST https://super-genius-back.herokuapp.com/songs/ name="Song" playcount="1051120140" artist={name="Artist"}`
 
 ##### Expected Result: 
 ```
